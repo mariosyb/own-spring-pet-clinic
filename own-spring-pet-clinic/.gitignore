@@ -6,6 +6,11 @@
 /src/test/javascript/PhantomJS*/
 
 ######################
+# Maven Release Plugin
+######################
+release.properties
+
+######################
 # Project Modules
 ######################
 /own-pet-clinic-data/target
