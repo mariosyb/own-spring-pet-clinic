@@ -3,20 +3,25 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package io.springframework.ownpetclinic.model;
+package io.springframework.petclinic.model;
 
 /**
  *
  * @author msulbara
  */
-public class Pet {
+public class PetType {
 
     private String name;
 
-    private PetType petType;
+    public PetType() {
+    }
 
-    private Owner owner;
+    public String getName() {
+        return name;
+    }
 
-    private LocalDate birthDate;
+    public void setName(String name) {
+        this.name = name;
+    }
 
 }
