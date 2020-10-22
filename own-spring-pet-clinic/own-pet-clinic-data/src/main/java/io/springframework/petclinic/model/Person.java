@@ -9,8 +9,8 @@ package io.springframework.petclinic.model;
  *
  * @author msulbara
  */
-public class Person {
-    
+public class Person extends BaseEntity {
+
     private String firstName;
     private String lastName;
 
@@ -32,6 +32,5 @@ public class Person {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
-    
-    
+
 }

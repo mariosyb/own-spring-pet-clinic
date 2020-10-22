@@ -5,23 +5,22 @@
  */
 package io.springframework.petclinic.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author msulbara
  */
-public class PetType extends BaseEntity {
+public class BaseEntity implements Serializable {
 
-    private String name;
+    private Long id;
 
-    public PetType() {
+    public Long getId() {
+        return id;
     }
 
-    public String getName() {
-        return name;
+    public void setId(Long id) {
+        this.id = id;
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    
 }
