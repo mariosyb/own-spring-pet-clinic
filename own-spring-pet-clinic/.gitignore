@@ -9,6 +9,9 @@
 # Maven Release Plugin
 ######################
 release.properties
+pom.xml.releaseBackup
+/own-pet-clinic-data/pom.xml.releaseBackup
+/own-pet-clinic-web/pom.xml.releaseBackup
 
 ######################
 # Project Modules
