@@ -6,18 +6,11 @@
 package io.springframework.petclinic.service;
 
 import io.springframework.petclinic.model.Vet;
-import java.util.Set;
 
 /**
  *
  * @author msulbara
  */
-public interface VetService {
-
-    Vet findById(Long id);
-
-    Vet save(Vet owner);
-
-    Set<Vet> findAll();
+public interface VetService extends CrudService<Vet, Long> {
 
 }

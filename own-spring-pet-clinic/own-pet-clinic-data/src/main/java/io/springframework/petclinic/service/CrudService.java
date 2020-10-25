@@ -5,15 +5,24 @@
  */
 package io.springframework.petclinic.service;
 
-import io.springframework.petclinic.model.Owner;
 import java.util.Set;
 
 /**
- *
+ * 
  * @author msulbara
+ * @param <T> : object type
+ * @param <ID> : id type
+ * this interface mimics SpringFramerok's CrudRepository
  */
-public interface OwnerService extends CrudService<Owner, Long> {
-    
-    Owner findByLastName(String lastName);
-    
+public interface CrudService<T, ID> {
+
+    Set<T> findAll();
+
+    T findById(ID id);
+
+    T save(T object);
+
+    void delete(T object);
+
+    void deleteById(ID id);
 }
