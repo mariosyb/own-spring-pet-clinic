@@ -3,6 +3,7 @@ package io.springframework.petclinic.service.map;
 import io.springframework.petclinic.model.Owner;
 import io.springframework.petclinic.service.OwnerService;
 import java.util.Set;
+import org.springframework.stereotype.Service;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,6 +14,7 @@ import java.util.Set;
  *
  * @author msulbara
  */
+@Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
