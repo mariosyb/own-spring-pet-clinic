@@ -5,7 +5,9 @@
  */
 package io.springframework.petclinic.controller;
 
+import io.springframework.petclinic.service.OwnerService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -18,10 +20,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class OwnerController {
 
+    final OwnerService ownerService;
+
+    // autowired implicito
+    public OwnerController(OwnerService ownerService) {
+        this.ownerService = ownerService;
+    }
+
     // estos mapping se concatenaran al mapping principal
     // que esta a nivel de clase ej: /owners/index
     @RequestMapping({"", "/", "/index", "/index.html"})
-    public String listOwners() {
+    public String listOwners(Model model) {
+        
+        model.addAttribute("owners", ownerService.findAll());
 
         return "owners/index";
     }
