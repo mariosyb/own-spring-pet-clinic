@@ -6,13 +6,20 @@
 package io.springframework.petclinic.model;
 
 import java.io.Serializable;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 
 /**
  *
  * @author msulbara
  */
+@MappedSuperclass // indica  JPA que esta clase es solo para ser extendida, no requiere su equivalente en la base
 public class BaseEntity implements Serializable {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     public Long getId() {
@@ -22,5 +29,5 @@ public class BaseEntity implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-    
+
 }
