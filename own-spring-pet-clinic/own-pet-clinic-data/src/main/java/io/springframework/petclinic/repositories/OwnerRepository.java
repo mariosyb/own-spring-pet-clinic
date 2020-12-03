@@ -14,4 +14,6 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
 
+    // spring data jpa query methods...
+    Owner findByLastName(String lastName);
 }
