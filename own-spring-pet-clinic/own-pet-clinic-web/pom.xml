@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <parent>
         <groupId>io.springframework</groupId>
         <artifactId>own-pet-clinic</artifactId>
         <version>0.0.3-SNAPSHOT</version>
     </parent>
-    
+
     <modelVersion>4.0.0</modelVersion>
-    
+
     <artifactId>own-pet-clinic-web</artifactId>
-    
+
     <properties>
         <!-- Web dependencies -->
         <webjars-bootstrap.version>3.3.6</webjars-bootstrap.version>
@@ -18,14 +19,14 @@
         <webjars-jquery.version>2.2.4</webjars-jquery.version>
         <wro4j.version>1.8.0</wro4j.version>
     </properties>
-    
+
     <dependencies>
         <dependency>
             <groupId>io.springframework</groupId>
             <artifactId>own-pet-clinic-data</artifactId>
             <version>0.0.3-SNAPSHOT</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
@@ -44,7 +45,16 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-        
+
+        <!--
+        comes from data module...
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        -->
+
         <!-- webjars -->
         <dependency>
             <groupId>org.webjars</groupId>
@@ -66,7 +76,7 @@
             <version>${webjars-bootstrap.version}</version>
         </dependency>
         <!-- end of webjars -->
-        
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -79,7 +89,7 @@
             </exclusions>
         </dependency>
     </dependencies>
-    
+
     <build>
         <plugins>
             <plugin>
@@ -95,7 +105,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory
+                    </wroManagerFactory>
                     <cssDestinationFolder>${project.build.directory}/classes/static/resources/css</cssDestinationFolder>
                     <wroFile>${basedir}/src/main/wro/wro.xml</wroFile>
                     <extraConfigFile>${basedir}/src/main/wro/wro.properties</extraConfigFile>
