@@ -5,7 +5,9 @@ import io.springframework.petclinic.model.Pet;
 import io.springframework.petclinic.service.OwnerService;
 import io.springframework.petclinic.service.PetService;
 import io.springframework.petclinic.service.PetTypeService;
+
 import java.util.Set;
+
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +16,8 @@ import org.springframework.stereotype.Service;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 /**
- *
  * @author msulbara
  */
 @Service
@@ -80,7 +82,11 @@ public class OwnerMapService extends AbstractMapService<Owner, Long> implements 
 
     @Override
     public Owner findByLastName(String lastName) {
-        return null;
+        return this.findAll()
+                .stream()
+                .filter(owner -> owner.getLastName().equalsIgnoreCase(lastName))
+                .findFirst()
+                .orElse(null);
     }
 
 }
