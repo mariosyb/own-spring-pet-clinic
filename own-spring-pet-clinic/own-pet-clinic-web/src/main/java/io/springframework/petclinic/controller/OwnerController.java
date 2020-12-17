@@ -11,7 +11,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- *
  * @author msulbara
  */
 // otra forma de hacer el request mapping
@@ -22,7 +21,7 @@ public class OwnerController {
 
     final OwnerService ownerService;
 
-    // autowired implicito
+    // autowired implicit
     public OwnerController(OwnerService ownerService) {
         this.ownerService = ownerService;
     }
@@ -31,15 +30,15 @@ public class OwnerController {
     // que esta a nivel de clase ej: /owners/index
     @RequestMapping({"", "/", "/index", "/index.html"})
     public String listOwners(Model model) {
-        
+
         model.addAttribute("owners", ownerService.findAll());
 
         return "owners/index";
     }
-    
+
     @RequestMapping("/find")
     public String findOwners() {
-    
+
         return "notimplemented";
     }
 
