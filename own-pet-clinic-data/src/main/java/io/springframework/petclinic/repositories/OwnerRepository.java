@@ -8,6 +8,8 @@ package io.springframework.petclinic.repositories;
 import io.springframework.petclinic.model.Owner;
 import org.springframework.data.repository.CrudRepository;
 
+import java.util.List;
+
 /**
  *
  * @author msulbara
@@ -16,4 +18,6 @@ public interface OwnerRepository extends CrudRepository<Owner, Long> {
 
     // spring data jpa query methods...
     Owner findByLastName(String lastName);
+
+    List<Owner> findAllByLastNameLike(String lastName);
 }

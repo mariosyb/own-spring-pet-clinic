@@ -14,6 +14,7 @@ import javax.persistence.Table;
 /**
  * @author msulbara
  */
+//@ToString
 @Setter
 @Getter
 @NoArgsConstructor
@@ -26,4 +27,8 @@ public class PetType extends BaseEntity {
     @Column(name = "name")
     private String name;
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }
